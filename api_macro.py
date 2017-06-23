@@ -65,8 +65,8 @@ def get_opts():
         "-z", "--zabbix",
         action="store",
         dest="server_url",
-        default="https://zabbix.au.syrahost.com",
-        help="URL of the Zabbix server. Default value is 'https://zabbix.au.syrahost.com'",
+        help="URL of the Zabbix server",
+        required=True,
     )
     parser.add_argument(
         "-u", "--user",
@@ -74,6 +74,7 @@ def get_opts():
         dest="user",
         default="Admin",
         help="Name of the Zabbix user who has permission to change settings. Default  is 'Admin'",
+        required=True,
     )
     parser.add_argument(
         "-p", "--pass",
