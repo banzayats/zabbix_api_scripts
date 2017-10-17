@@ -32,7 +32,6 @@ def api_request(method, params, auth=None):
 def get_sla(svc_id, t_from, t_to, auth):
     params = {"serviceids": svc_id, "intervals": [{"from": t_from, "to": t_to}]}
     sla = api_request("service.getsla", params, auth)
-    print sla[svc_id]['sla'][0]['sla']
     return sla[svc_id]['sla'][0]['sla']
 
 
