@@ -69,7 +69,7 @@ def main():
     proc = Popen(command, shell=True, stdout=PIPE)
     status = proc.stdout.read()
 
-    # Cleaning the output
+    # Cleaning the output so it looked like a valid JSON
     output = re.sub('\s+', '', status)
     output = re.sub("ISODate\((.*?)\)", r"\1", output, flags=re.DOTALL)
     output = re.sub("NumberLong\((.*?)\)", r"\1", output, flags=re.DOTALL)
